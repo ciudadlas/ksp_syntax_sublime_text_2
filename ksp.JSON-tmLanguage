@@ -1,0 +1,86 @@
+{ "name": "KSP",
+  "scopeName": "source.ksp",
+  "fileTypes": ["ksp"],
+  "patterns": [
+        { "match": "\\$(\\d+)",
+          "name": "keyword.ksp",
+          "captures": {
+              "1": { "name": "constant.numeric.ksp" }
+           },
+          "comment": "Tab stops like $1, $2..."
+        },
+
+        { "match": "\\$([A-Za-z][A-Za-z0-9_]+)",
+          "name": "keyword.ksp",
+          "captures": {
+              "1": { "name": "constant.numeric.ksp" }
+           },
+          "comment": "Variables like $PARAM1, $TM_SELECTION..."
+        },
+
+        { "match": "\\%([A-Za-z][A-Za-z0-9_]+)",
+          "name": "keyword.ksp",
+          "captures": {
+              "1": { "name": "constant.numeric.ksp" }
+           },
+          "comment": "Variables like $PARAM1, $TM_SELECTION..."
+        },
+
+        { "match": "\\!([A-Za-z][A-Za-z0-9_]+)",
+          "name": "keyword.ksp",
+          "captures": {
+              "1": { "name": "constant.numeric.ksp" }
+           },
+          "comment": "Variables like $PARAM1, $TM_SELECTION..."
+        },
+
+        { "match": "(declare)",
+          "name": "keyword.ksp"
+        },
+
+        { "match": "(:=|//*)",
+          "name": "keyword.operator"
+        },
+
+        { "match": "(on init|end on|on ui_control|on release)",
+          "name": "support.constant"
+        },
+
+        { "match": "(const|ui_label|ui_button|ui_switch|ui_slider|ui_menu|polyphonic)",
+          "name": "support.constant"
+        },
+
+        { "match": "(set_control_par_str|set_control_par|get_ui_id|move_control_px|make_persistent|set_control_help|read_persistent_var|set_script_title|in_range|set_key_color|set_listener|set_ui_height_px|message|make_perfview|add_menu_item|set_text|set_engine_par|hide_part|inc|SET_CONDITION|call|set_event_par|set_event_mark|play_note|get_event_par|ignore_event|dec|random)",
+          "name": "entity.name.function"
+        },
+
+        { "match": "(if|end if|while|end while|else|select|end select|case)",
+          "name": "keyword.control"
+        },
+
+        { "name": "variable.complex.ksp",
+          "begin": "(\\$)(\\{)([0-9]+):",
+          "beginCaptures": {
+              "1": { "name": "keyword.ksp" },
+              "3": { "name": "constant.numeric.ksp" }
+           },
+           "patterns": [
+              { "include": "$self" },
+              { "name": "string.ksp",
+                "match": "."
+              }
+           ],
+           "end": "\\}"
+        },
+
+        { "name": "comment.ksp",
+          "begin": "\\{",
+           "end": "\\}"
+        },
+
+        { "name": "constant.character.escape.ksp",
+          "match": "\\\\(\\$|\\>|\\<)"
+        }
+    ],
+  "uuid": "05f3da6a-7acd-4ef4-b5d2-840d6325d250"
+}
