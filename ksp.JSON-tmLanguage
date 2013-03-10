@@ -42,7 +42,7 @@
           "name": "keyword.operator"
         },
 
-        { "match": "(on init|end on|on ui_control|on release)",
+        { "match": "(on init|end on|on ui_control|on release|on controller|on note|on listener|function|end function)",
           "name": "support.constant"
         },
 

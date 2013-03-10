@@ -88,7 +88,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(on init|end on|on ui_control|on release)</string>
+			<string>(on init|end on|on ui_control|on release|on controller|on note|on listener|function|end function)</string>
 			<key>name</key>
 			<string>support.constant</string>
 		</dict>
